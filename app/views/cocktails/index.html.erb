@@ -1,12 +1,19 @@
-<h1>List of all cocktails</h1>
-<ul>
-<% @cocktails.each do |cocktail| %>
-  <li>
-    <%= cocktail.name %> <%= link_to "Details", cocktail_path(cocktail) %>
-  </li>
-<% end %>
-</ul>
-
-<p><%= link_to 'Add a new cocktail', new_cocktail_path %></p>
-
-<p><%= link_to 'All doses', doses_path %></p>
+<div class="banner">
+  <h1>List of all cocktails</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-3">
+        <div class="card">
+          <p><%= cocktail.name %></p>
+          <p><%= link_to "Details", cocktail_path(cocktail) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <p><%= link_to 'Add a new cocktail', new_cocktail_path %></p>
+  <p><%= link_to 'All doses', doses_path %></p>
+</div>
